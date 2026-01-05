@@ -13,4 +13,7 @@ export const groupsService = {
     const response = await api.post<GroupDto>("/groups", createGroupDto);
     return response.data;
   },
+  async delete(groupId: string): Promise<void> {
+    await api.delete(`/groups/${groupId}`);
+  },
 };
